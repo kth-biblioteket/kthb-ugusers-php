@@ -1,3 +1,3 @@
-# Aktiverar låntagare med KTH-id i Alma
+# Söker KTH-användare
 
-## Login mot CAS och sedan apianrop mot alma för aktivering
+## Login mot CAS och sedan apianrop mot ldap
