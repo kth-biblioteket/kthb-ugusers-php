@@ -4,7 +4,7 @@ Funktion som anropar LDAP-api
 
 **********/
 function ajaxRequest(url) {
-	$("#modaltext").text(modalactivatetext);
+	$("#modaltext").text('');
 	$('#loadingmessage img').show();
 	$('#modaltext').css("color","black");
 	$.ajax({                                      
@@ -71,30 +71,6 @@ function ajaxRequest(url) {
 		}
 	});
 };
-
-/**********
-
-Funktion som loggar ut användare
-
-**********/
-function logoutfromsaml() {
-	$.ajax({                                      
-			url: 'logout.php',
-			dataType: 'json',
-			type: 'post',
-			success: function(output){
-				window.location.href = "./";
-			},
-			error: function(ajaxContext){
-				$('#loadingmessage img').hide();
-				$("#modaltext").html(ajaxContext.responseText + 
-					"<input class=\"modalclose\" type='button' value=\"" + 
-					modalclosbuttontext +
-					"\" onclick=\"$('#myModal').hide();\"/></div>");
-				$('#myModal').show();
-			}
-		});
-}
 
 /**********
 
@@ -172,12 +148,19 @@ Ser till att placeholder(den gråa infotexten som syns inne i ett fält innan ma
 Anpassningar till språk
 
 **********/
-var language, usernamekthplaceholder, usernameotherplaceholder, modalsendrequesttext, modalclosbuttontext, modalinvalidusernamecharacterstext, modalinvalidformtext;
+var language, 
+usernamekthplaceholder, 
+usernameotherplaceholder, 
+modalsendrequesttext, 
+modalclosbuttontext, 
+modalinvalidusernamecharacterstext, 
+modalinvalidformtext;
+
 $(document).ready(function() {
-	if ($( "#language" ).val()=='swedish') {
-		language = 'swedish';
+	if ($( "#language" ).val()=='sv') {
+		language = 'sv';
 	} else {
-		language = 'english';
+		language = 'en';
 	}
 	$('input, textarea').placeholder();
 });

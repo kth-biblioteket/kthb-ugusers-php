@@ -28,7 +28,7 @@ if (!empty($_GET["language"])) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!-- KTH Styles -->
 		<!--link href="<?php echo $kth_www?>/css/kth-22cebcf8c708b27ad9c875474470c18b.css" rel="stylesheet"-->
-    <link type="text/css" href="https://apps.lib.kth.se/kthstyle/kth.css" rel="stylesheet" />
+    <link type="text/css" href="/kthstyle/kth.css" rel="stylesheet" />
 		<link type="text/css" href="css/ugusers.css?version=1" rel="stylesheet" />
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
@@ -58,9 +58,11 @@ if (!empty($_GET["language"])) {
 		if ($language == "sv") {
 			$formiamlable = 'Inloggad som&nbsp';
 			$kthaccounttext = 'KTH-konto</i>';
+			$searchbuttontext = 'Sök';
 		} else {
 			$formiamlable = 'Logged in as&nbsp';
 			$kthaccounttext = 'KTH-account</i>';
+			$searchbuttontext = 'Search';
 		}
 ?>
 <div class="content">
@@ -69,7 +71,7 @@ if (!empty($_GET["language"])) {
     	<div class="container">      
 				<div class="header-container__top">
 					<figure class="block figure defaultTheme mainLogo" data-cid="1.77257" lang="sv-SE">
-						<a href="<?php echo $kth_www?>/"><img class="figure-img img-fluid" src="https://apps.lib.kth.se/polopoly/KTH_Logotyp.svg" alt="KTH:s logotyp" height="70" width="70"></a>
+						<a href="<?php echo $kth_www?>/"><img class="figure-img img-fluid" src="/polopoly/KTH_Logotyp.svg" alt="KTH:s logotyp" height="70" width="70"></a>
 					</figure>
 					<h1 class="block siteName" data-cid="1.260060">
 						<?php if ($language == "sv") { ?>
@@ -81,10 +83,10 @@ if (!empty($_GET["language"])) {
 					<div class="block list links secondaryMenu" data-cid="1.864801" lang="sv-SE">
 						<ul>
 							<?php if ($language == "sv") { ?>
-											<li><a href="<?php echo $kth_www?>/en/biblioteket" hreflang="en-UK">KTH LIbrary</a>
+							<li><a href="index.php?language=en" hreflang="en-UK">English</a>
 							</li>
 							<?php } else {?>
-							<li><a href="<?php echo $kth_www?>/biblioteket" hreflang="en-UK">KTH Biblioteket</a>
+							<li><a href="index.php?language=sv" hreflang="en-UK">Svenska</a>
 							</li>
 							<?php }?>
 						</ul>
@@ -241,7 +243,7 @@ if (!empty($_GET["language"])) {
                 				</div>
 							</div>
 							<div style="padding-top:10px">
-								<input id="skicka" name="skicka" type="submit" value="Sök" >
+								<input id="skicka" name="skicka" type="submit" value="<?php echo $searchbuttontext ?>" >
 							</div>
 						</form>
 						<div id="myModal" class="" tabindex="-1">
