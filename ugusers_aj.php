@@ -17,7 +17,7 @@ Funktion som hämtar användarinformation från LDAP
 
 **********/
 function getuser($kth_id) {
-	global $api_key,$apikey_ldap;
+	global $apikey_ldap;
 	$ch = curl_init();
 	$url = 'https://lib.kth.se/ldap/api/v1/account/' . $kth_id;
 	$queryParams = '?token=' . $apikey_ldap;
