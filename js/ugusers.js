@@ -41,9 +41,14 @@ function ajaxRequest(url) {
 					html += 
 					'<tr>' +
 						'<td>Affiliations</td><td>'
-					output.ugusers.ugAffiliation.forEach(element => {
-						html +=  element + ', '
-					});
+						if(Array.isArray(output.ugusers.ugAffiliation)) {
+							output.ugusers.ugAffiliation.forEach(element => {
+								html +=  element + ', '
+							});
+						} else 
+						{
+							html +=  output.ugusers.ugAffiliation;
+						}
 					html += 
 						'</td>' + 
 					'</tr>';
