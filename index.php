@@ -56,7 +56,7 @@ if (!empty($_GET["language"])) {
 		<!-- KTH Styles -->
 		<!--link href="<?php echo $kth_www?>/css/kth-22cebcf8c708b27ad9c875474470c18b.css" rel="stylesheet"-->
     <link type="text/css" href="/kthstyle/kth.css" rel="stylesheet" />
-		<link type="text/css" href="css/ugusers.css?version=1" rel="stylesheet" />
+		<link type="text/css" href="css/ugusers.css?version=2" rel="stylesheet" />
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/jquery.placeholder.js"></script>
@@ -236,7 +236,7 @@ if (!empty($_GET["language"])) {
 		<div class="container start noMainMenu">
 			<div class="row">
 				<div class="col">
-					<article class="article standard">
+					<article class="article block teaser">
 						<div id="" class="">
 							<div>
 								<?php 
@@ -244,8 +244,10 @@ if (!empty($_GET["language"])) {
 								?>
 								<div class="preArticleParagraphs">
 									<h1>Sök KTH-användare</h1>
-									<div class="lead ">
-										<p><?php echo $ingress?></p>
+									<div class="teaserBody">
+										<div class="lead ">
+											<p><?php echo $ingress?></p>
+										</div>
 									</div>
 								</div>
 								<?php 
@@ -253,8 +255,10 @@ if (!empty($_GET["language"])) {
 								?>
 								<div class="preArticleParagraphs">
 									<h1>Search KTH-users</h1>
-									<div class="lead ">
-										<p><?php echo $ingress?></p>
+									<div class="teaserBody">
+										<div class="lead ">
+											<p><?php echo $ingress?></p>
+										</div>
 									</div>
 								</div>
 								<?php 

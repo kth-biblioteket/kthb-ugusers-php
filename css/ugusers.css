@@ -181,3 +181,7 @@ table tbody tr td {
 table tbody tr td.left {
 	width: 200px;
 }
+
+form {
+	padding-top: 10px;
+}
