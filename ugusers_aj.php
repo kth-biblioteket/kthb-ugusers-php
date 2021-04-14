@@ -36,6 +36,26 @@ function getldapuserbyaccount($kth_id) {
 Funktion som hämtar användarinformation från LDAP
 
 **********/
+function getldapuserbykthid($kth_id) {
+	global $apikey_ldap;
+	$ch = curl_init();
+	$url = 'https://lib.kth.se/ldap/api/v1/kthid/' . $kth_id;
+	$queryParams = '?token=' . $apikey_ldap;
+	curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_HEADER, FALSE);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+	$response = curl_exec($ch);
+	curl_close($ch);
+	return $response;
+}
+
+/********** 
+
+Funktion som hämtar användarinformation från LDAP
+
+**********/
 function getldapuserbycn($firstname, $lastname) {
 	global $apikey_ldap;
 	$ch = curl_init();
@@ -122,7 +142,10 @@ if(isset($_SESSION['kth_id'])) {
 	if(!empty($_POST['searchuser'])) {
 		if($_POST['searchuser'] == 1) {
 			if ($_POST['type'] == 'ldap') {
-				if($_POST['kthaccount'] != '' ){
+				if($_POST['kthid'] != '' ){
+					$userinfo = getldapuserbykthid($_POST['kthid']);
+				} 
+				elseif($_POST['kthaccount'] != '' ){
 					$userinfo = getldapuserbyaccount($_POST['kthaccount']);
 				} 
 				elseif ($_POST['firstname'] != '' || $_POST['lastname'] != ''){

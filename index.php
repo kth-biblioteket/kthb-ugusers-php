@@ -89,13 +89,15 @@ if (!empty($_GET["language"])) {
 			if ($language == "sv") {
 				$formiamlable = 'Inloggad som&nbsp';
 				$kthaccounttext = 'KTH-konto</i>';
+				$kthidtext = 'KTH-id</i>';
 				$searchbuttontext = 'Sök';
-				$ingress = 'Searching for a KTH-account takes precedence. There is an automatic truncation in the first and last name fields, so it is possible to enter only one or a few letters in each field. By clicking on the green "KTH Profile" button, more information is obtained from KTH\'s profile pages, e.g. where the person works and possibly ORCiD or other author-IDs.';
+				$ingress = 'Searching for a KTH-id or KTH-account takes precedence. There is an automatic truncation in the first and last name fields, so it is possible to enter only one or a few letters in each field. By clicking on the green "KTH Profile" button, more information is obtained from KTH\'s profile pages, e.g. where the person works and possibly ORCiD or other author-IDs.';
 			} else {
 				$formiamlable = 'Logged in as&nbsp';
 				$kthaccounttext = 'KTH-account</i>';
+				$kthidtext = 'KTH-id</i>';
 				$searchbuttontext = 'Search';
-				$ingress = 'Searching for a KTH-account takes precedence. There is an automatic truncation in the first and last name fields, so it is possible to enter only one or a few letters in each field. By clicking on the green "KTH Profile" button, more information is obtained from KTH\'s profile pages, e.g. where the person works and possibly ORCiD or other author-IDs.';
+				$ingress = 'Searching for a KTH-id eller KTH-account takes precedence. There is an automatic truncation in the first and last name fields, so it is possible to enter only one or a few letters in each field. By clicking on the green "KTH Profile" button, more information is obtained from KTH\'s profile pages, e.g. where the person works and possibly ORCiD or other author-IDs.';
 			}
 	?>
 	<div class="content">
@@ -277,6 +279,12 @@ if (!empty($_GET["language"])) {
 									</label>
 									<div>
 										<input class="" type="text" name="kthaccount" id="kthaccount">
+									</div>
+									<label style="" class="bib_label" for="kthid">
+										<?php echo $kthidtext;?>
+									</label>
+									<div>
+										<input class="" type="text" name="kthid" id="kthid">
 									</div>
 									<label style="" class="bib_label" for="firstname">
 										<?php echo 'First name';?>
