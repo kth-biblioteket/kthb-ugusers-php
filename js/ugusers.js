@@ -257,6 +257,7 @@ function sendrequest() {
 	$('#kthprofileinfo').html('');
 	$('#id').removeClass("error");
 	$('#kthaccount').removeClass("error");
+	$('#kthid').removeClass("error");
 	if (uguser.kthaccount.value != "") {
 	}
 	var validerat = Validering.form();
@@ -320,6 +321,7 @@ function clearfields() {
 	$('#firstname').val("");
 	$('#lastname').val("");
 	$('#kthaccount').val("");
+	$('#kthid').val("");
 }
 
 /**********

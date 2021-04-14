@@ -60,7 +60,7 @@ if (!empty($_GET["language"])) {
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/jquery.placeholder.js"></script>
-		<script type="text/javascript" src="js/ugusers.js?version=2.1"></script>
+		<script type="text/javascript" src="js/ugusers.js?version=2.2"></script>
 	</head>
 	<body>
 <?php
