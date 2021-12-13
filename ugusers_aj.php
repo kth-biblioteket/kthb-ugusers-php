@@ -77,14 +77,20 @@ function getldapuserbycn($firstname, $lastname) {
 Funktion som hämtar användarinformation från KTH Profiles
 
 **********/
+
+
 function getkthprofile_by_kth_id($kth_id) {
 	global $KTH_API_KEY_PROFILES;
 	$ch = curl_init();
 	$url = 'https://api.kth.se/api/profile/v1/kthid/' . $kth_id;
 	$queryParams = '?api_key=' . $KTH_API_KEY_PROFILES;
-	curl_setopt($ch, CURLOPT_URL, $url . $queryParams);
+	$headers = [
+        'Content-Type:application/json',
+		'accept: application/json',
+        'api_key: ' . $KTH_API_KEY_PROFILES];
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-	curl_setopt($ch, CURLOPT_HEADER, FALSE);
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 	$response = curl_exec($ch);
